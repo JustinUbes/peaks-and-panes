@@ -19,17 +19,19 @@ https://qekeystoneroofing.com/
 
 These values are defined in `css/styles.css` and must be used consistently across all pages:
 
-- **Primary blue**: `#2563eb`
-- **Accent purple**: `#7c3aed`
-- **Background**: `#f5f7fb`
-- **Body text**: `#1f2937`
-- **Font family**: `Arial, Helvetica, sans-serif`
-- **Base line-height**: `1.5`
+- **Cobalt blue** (primary brand): `#1a45b0` — logo, nav links, headings
+- **Orange accent** (CTA / highlights): `#f5821e` — buttons, hover states, header border, footer link hover
+- **Near-black** (body text): `#111827`
+- **Background**: `#f8fafc`
+- **Header background**: `#111827` (dark navy — use transparent logo `assets/icons/peakspanes-removebg-preview.png`)
+- **Footer / hero dark**: `#111827`
+- **Hero gradient**: `linear-gradient(135deg, #111827 0%, #1a45b0 100%)`
+- **Font family (body)**: `'Open Sans', Arial, sans-serif`
+- **Font family (headings / logo)**: `'Montserrat', Arial, sans-serif`
 - **Container max-width**: `960px` (via `width: min(90%, 960px)`)
 - **Border radius (buttons/cards)**: `6px`
-- **Hero gradient**: `linear-gradient(135deg, #2563eb, #7c3aed)`
 
-Do not introduce new color values, font families, or spacing scales without updating the design tokens in `:root`.
+Colors are derived directly from the brand logo at `assets/icons/logo.png`. Do not introduce new color values without updating this token list.
 
 ## File & Asset Conventions
 

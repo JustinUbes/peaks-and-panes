@@ -1,13 +1,26 @@
 <header class="site-header">
   <nav class="site-nav" aria-label="Main navigation">
     <div class="container">
-      <a class="site-logo" href="/">Peaks and Panes</a>
+      <a class="site-logo" href="/">
+        <img src="/assets/icons/peakspanes-removebg-preview.png" alt="Peaks and Panes — Roofing, Siding, Windows, Doors" />
+      </a>
       <ul class="nav-links">
-        <li><a href="#">Option 1</a></li>
-        <li><a href="#">Option 2</a></li>
-        <li><a href="#">Option 3</a></li>
-        <li><a href="#">Option 4</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            Services <span aria-hidden="true">&#9662;</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="/services/roofing.html">Roofing</a></li>
+            <li><a href="/services/siding.html">Siding</a></li>
+            <li><a href="/services/windows.html">Windows</a></li>
+            <li><a href="/services/doors.html">Doors</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Contact</a></li>
       </ul>
     </div>
   </nav>
 </header>
+
