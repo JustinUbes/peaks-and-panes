@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Peaks and Panes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="site-header"></div>
+
+    <section class="page-hero">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p>Get a free estimate or ask us anything — we'll get back to you within one business day.</p>
+      </div>
+    </section>
+
+    <main class="container">
+      <section class="contact-section">
+        <div class="contact-grid">
+
+          <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>Whether you need a roof replacement, new siding, windows, or doors, the Peaks and Panes team is ready to help homeowners across Bucks and Montgomery Counties, PA.</p>
+            <ul class="contact-details">
+              <li>
+                <strong>Phone</strong>
+                <a href="tel:+12672814197">(267) 281-4197</a>
+              </li>
+              <li>
+                <strong>Email</strong>
+                <a href="mailto:sean@peaksandpanes.com">sean@peaksandpanes.com</a>
+              </li>
+              <li>
+                <strong>Service Area</strong>
+                <span>Bucks and Montgomery Counties, PA</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="contact-form-card">
+            <h2>Send Us a Message</h2>
+
+            <!-- Shown by Formspree JS after a successful submission -->
+            <div class="fs-banner fs-banner--success" data-fs-success>
+              <p>Thanks for reaching out! We&rsquo;ll be in touch within one business day.</p>
+            </div>
+
+            <!-- Shown by Formspree JS when a submission-level error occurs -->
+            <div class="fs-banner fs-banner--error" data-fs-error></div>
+
+            <form
+              id="contact-form"
+              class="contact-form"
+              action="https://formspree.io/f/mjgqebwq"
+              method="POST"
+            >
+              <input type="hidden" name="_subject" value="New enquiry from Peaks and Panes website" />
+
+              <div class="form-group">
+                <label for="name">Full Name <span class="required" aria-hidden="true">*</span></label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Jane Smith"
+                  required
+                  autocomplete="name"
+                  data-fs-field
+                />
+                <span class="fs-field-error" data-fs-error="name"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address <span class="required" aria-hidden="true">*</span></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="jane@example.com"
+                  required
+                  autocomplete="email"
+                  data-fs-field
+                />
+                <span class="fs-field-error" data-fs-error="email"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number <span class="optional">(optional)</span></label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="(123) 456-7890"
+                  autocomplete="tel"
+                  data-fs-field
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="service">Service of Interest</label>
+                <select id="service" name="service" data-fs-field>
+                  <option value="" disabled selected>Select a service…</option>
+                  <option value="Roofing">Roofing</option>
+                  <option value="Siding">Siding</option>
+                  <option value="Windows">Windows</option>
+                  <option value="Doors">Doors</option>
+                  <option value="Multiple / Not Sure">Multiple / Not Sure</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Your Message <span class="required" aria-hidden="true">*</span></label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Tell us about your project or question…"
+                  required
+                  data-fs-field
+                ></textarea>
+                <span class="fs-field-error" data-fs-error="message"></span>
+              </div>
+
+              <button type="submit" class="btn-submit" data-fs-submit-btn>Send Message</button>
+            </form>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/script.js"></script>
+
+    <!-- Formspree AJAX — queues initForm before the library loads -->
+    <script>
+      window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+      formspree('initForm', { formElement: '#contact-form', formId: 'mjgqebwq' });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+  </body>
+</html>
