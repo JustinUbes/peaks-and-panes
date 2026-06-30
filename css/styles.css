@@ -477,3 +477,138 @@ main {
   cursor: not-allowed;
   transform: none;
 }
+
+/* ── About Page ───────────────────────────────────────────── */
+
+/* Story section */
+.about-story {
+  padding: 4rem 0;
+}
+
+.about-story-content {
+  max-width: 720px;
+}
+
+.about-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #f07820;
+  margin-bottom: 0.6rem;
+}
+
+.about-story-content h2 {
+  margin-top: 0;
+  font-size: 1.9rem;
+  color: #111827;
+}
+
+.about-lead {
+  font-size: 1.1rem;
+  color: #374151;
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.about-story-content p {
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+/* Values section */
+.about-values {
+  padding: 4rem 0;
+  background-color: #f1f5f9;
+}
+
+.values-heading {
+  text-align: center;
+  font-size: 1.7rem;
+  color: #111827;
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+@media (max-width: 720px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.value-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1.75rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.value-icon {
+  font-size: 1.5rem;
+  color: #f07820;
+  margin-bottom: 0.75rem;
+}
+
+.value-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  font-size: 1.05rem;
+  color: #111827;
+}
+
+.value-card p {
+  margin: 0;
+  font-size: 0.93rem;
+  color: #4b5563;
+  line-height: 1.75;
+}
+
+/* CTA strip */
+.about-cta {
+  padding: 4.5rem 0;
+  background: linear-gradient(135deg, #111827 0%, #1a45b0 100%);
+  color: #ffffff;
+  text-align: center;
+}
+
+.about-cta h2 {
+  margin-top: 0;
+  font-size: 1.9rem;
+}
+
+.about-cta p {
+  margin: 0 0 2rem;
+  font-size: 1.05rem;
+  opacity: 0.85;
+}
+
+.btn-cta {
+  display: inline-block;
+  padding: 0.85rem 2.25rem;
+  background-color: #f07820;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-cta:hover,
+.btn-cta:focus {
+  background-color: #d4661a;
+  outline: none;
+}
+
+.btn-cta:active {
+  transform: translateY(1px);
+}
