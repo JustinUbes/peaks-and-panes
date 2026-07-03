@@ -27,11 +27,13 @@ fetch('/components/footer.html')
   .catch((err) => console.error(err));
 
 document.addEventListener('DOMContentLoaded', () => {
-  const button = document.getElementById('ctaButton');
-
-  if (button) {
-    button.addEventListener('click', () => {
-      alert('Thanks for checking out the starter site!');
+  // Dropdown keyboard accessibility: close on Escape
+  document.querySelectorAll('.nav-dropdown-toggle').forEach((toggle) => {
+    toggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.blur();
+      }
     });
-  }
+  });
 });
