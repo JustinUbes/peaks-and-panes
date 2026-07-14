@@ -7,7 +7,7 @@ When reviewing code or generating code, it is important to follow a consistent s
 
 ## Business Context
 
-Peaks and Panes is a roofing, siding, windows, and doors company based in Montgomery County, Pennsylvania. The website targets homeowners seeking contractors for exterior home improvement projects. Tone should be professional, trustworthy, and locally focused. Content should emphasize quality craftsmanship, local expertise, and ease of contacting the company for quotes.
+Peaks and Panes is a roofing, siding, windows, and doors company based in Montgomery and Bucks Counties, Pennsylvania. The website targets homeowners seeking contractors for exterior home improvement projects. Tone should be professional, trustworthy, and locally focused. Content should emphasize quality craftsmanship, local expertise, and ease of contacting the company for quotes.
 
 ## Style Reference Sites
 

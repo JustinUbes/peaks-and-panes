@@ -1,6 +1,6 @@
 This files holds a set of instructions for GitHub Copilot to follow when generating code for this repository. The instructions are intended to reduce the amount of time the agent spends searching for information about the codebase and to reduce the likelihood of generating code that fails validation or build steps.
 
-This repository holds the code for a static html/css/js website designed for a small business named Peaks and Panes. Peaks and Panes is a roofing, siding, windows and doors company based in Montgomery County, Pennsylvania. The website is designed to provide information about the company, its services, and to allow potential customers to contact the company for quotes or inquiries.
+This repository holds the code for a static html/css/js website designed for a small business named Peaks and Panes. Peaks and Panes is a roofing, siding, windows and doors company based in Montgomery and Bucks Counties, Pennsylvania. The website is designed to provide information about the company, its services, and to allow potential customers to contact the company for quotes or inquiries.
 
 <Goals>
 - Reduce the likelihood of a cloud agent pull request getting rejected by the user due to generating code that fails to conform to high quality standards.

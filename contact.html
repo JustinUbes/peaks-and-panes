@@ -4,10 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us | Peaks and Panes</title>
+    <meta name="description" content="Contact Peaks and Panes for roofing, siding, windows, and doors projects in Montgomery and Bucks Counties, PA." />
+    <meta property="og:title" content="Contact Peaks and Panes" />
+    <meta property="og:description" content="Request an estimate or ask a question about your exterior home project." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://peaksandpanes.com/contact.html" />
+    <meta property="og:image" content="https://peaksandpanes.com/assets/images/Website_picture_2.png" />
+    <link rel="canonical" href="https://peaksandpanes.com/contact.html" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Peaks and Panes",
+        "url": "https://peaksandpanes.com/contact.html",
+        "telephone": "+1-267-281-4197",
+        "email": "sean@peaksandpanes.com",
+        "areaServed": ["Montgomery County, PA", "Bucks County, PA"],
+        "serviceType": ["Roofing", "Siding", "Windows", "Doors"]
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
     <div id="site-header"></div>
@@ -45,14 +64,6 @@
           <div class="contact-form-card">
             <h2>Send Us a Message</h2>
 
-            <!-- Shown by Formspree JS after a successful submission -->
-            <div class="fs-banner fs-banner--success" data-fs-success>
-              <p>Thanks for reaching out! We&rsquo;ll be in touch within one business day.</p>
-            </div>
-
-            <!-- Shown by Formspree JS when a submission-level error occurs -->
-            <div class="fs-banner fs-banner--error" data-fs-error></div>
-
             <form
               id="contact-form"
               class="contact-form"
@@ -70,9 +81,7 @@
                   placeholder="Jane Smith"
                   required
                   autocomplete="name"
-                  data-fs-field
                 />
-                <span class="fs-field-error" data-fs-error="name"></span>
               </div>
 
               <div class="form-group">
@@ -84,9 +93,7 @@
                   placeholder="jane@example.com"
                   required
                   autocomplete="email"
-                  data-fs-field
                 />
-                <span class="fs-field-error" data-fs-error="email"></span>
               </div>
 
               <div class="form-group">
@@ -97,13 +104,12 @@
                   name="phone"
                   placeholder="(123) 456-7890"
                   autocomplete="tel"
-                  data-fs-field
                 />
               </div>
 
               <div class="form-group">
                 <label for="service">Service of Interest</label>
-                <select id="service" name="service" data-fs-field>
+                <select id="service" name="service">
                   <option value="" disabled selected>Select a service…</option>
                   <option value="Roofing">Roofing</option>
                   <option value="Siding">Siding</option>
@@ -121,12 +127,10 @@
                   rows="5"
                   placeholder="Tell us about your project or question…"
                   required
-                  data-fs-field
                 ></textarea>
-                <span class="fs-field-error" data-fs-error="message"></span>
               </div>
 
-              <button type="submit" class="btn-submit" data-fs-submit-btn>Send Message</button>
+              <button type="submit" class="btn-submit">Send Message</button>
             </form>
           </div>
 
@@ -136,13 +140,6 @@
 
     <div id="site-footer"></div>
 
-    <script src="js/script.js"></script>
-
-    <!-- Formspree AJAX — queues initForm before the library loads -->
-    <script>
-      window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-      formspree('initForm', { formElement: '#contact-form', formId: 'mjgqebwq' });
-    </script>
-    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+    <script src="/js/script.js"></script>
   </body>
 </html>
