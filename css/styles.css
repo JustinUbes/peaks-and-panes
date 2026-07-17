@@ -198,6 +198,42 @@ body {
   display: block;
 }
 
+@media (max-width: 900px) {
+  .site-nav .container {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: min(94%, 960px);
+    padding: 0.85rem 0;
+  }
+
+  .site-logo {
+    justify-content: center;
+  }
+
+  .site-logo img {
+    height: clamp(66px, 14vw, 80px);
+  }
+
+  .nav-right {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+    width: 100%;
+  }
+
+  .nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  .dropdown-menu {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 @media (max-width: 600px) {
   .site-nav .container {
     flex-direction: column;
@@ -219,6 +255,8 @@ body {
   .nav-right {
     flex-direction: column;
     gap: 0.8rem;
+    margin-left: 0;
+    align-items: center;
   }
 
   .emergency-button {
@@ -854,6 +892,23 @@ main {
   max-width: 15ch;
 }
 
+.photo-split-copy {
+  max-width: 40ch;
+}
+
+.photo-split-copy h3 {
+  margin: 0 0 0.55rem;
+  font-size: 1.08rem;
+  color: #111827;
+}
+
+.photo-split-copy p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #4b5563;
+}
+
 .photo-split-cta {
   align-self: flex-start;
   margin-top: 0.35rem;
@@ -918,6 +973,10 @@ main {
   }
 
   .photo-split-intro h2 {
+    max-width: none;
+  }
+
+  .photo-split-copy {
     max-width: none;
   }
 
