@@ -674,7 +674,7 @@ main {
 .hero--photo {
   background-image:
     linear-gradient(135deg, rgba(17, 24, 39, 0.82) 0%, rgba(26, 69, 176, 0.72) 100%),
-    url('/assets/images/website_picture_1.png');
+    url('/assets/images/Website_picture_1.png');
   background-size: cover;
   background-position: center;
 }
