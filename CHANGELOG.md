@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-01
+
+### Added
+- Updated the homepage hero background to use the new fall banner artwork.
+- Added a homepage customer reviews section featuring recent Google review feedback and a call-to-action to the Google listing.
+
 ## 2026-09-23
 
 ### Added
