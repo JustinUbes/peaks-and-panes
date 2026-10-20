@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-10-19
+
+### Added
+- Window Replacement FAQ section on `services/windows.html`, below the ProVia product embed, with five expandable dropdowns (energy savings, insert vs. full-frame replacement, installation timeline, older/historic homes, window brands), plus `FAQPage` structured data.
+- Subtle staggered fade-in on the homepage hero content (respects `prefers-reduced-motion`).
+
+### Changed
+- Rewrote the About page story copy with the owner's updated narrative (Telford roots, owner on every job, fair per-home pricing).
+- Homepage hero: primary button now reads "Get Started"; larger headline, tighter tagline, and a lighter photo overlay so the banner shows through.
+- Header navigation and hero headlines switched to Montserrat in pure white for improved readability; added the 800 weight to the Google Fonts request on all pages.
+- Updated the Windows page meta description to reflect the new FAQ content.
+
 ## 2026-10-01
 
 ### Added

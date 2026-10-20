@@ -107,10 +107,12 @@ body {
 }
 
 .nav-links a {
-  color: #f3f4f6;
+  color: #ffffff;
   text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   transition: color 0.2s ease;
 }
 
@@ -145,10 +147,11 @@ body {
   background: none;
   border: none;
   padding: 0;
-  color: #f3f4f6;
-  font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
+  color: #ffffff;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -179,10 +182,11 @@ body {
 .dropdown-menu a {
   display: block;
   padding: 0.6rem 1.25rem;
-  color: #f3f4f6;
+  color: #ffffff;
   text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
   white-space: nowrap;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
@@ -272,6 +276,23 @@ body {
   background: linear-gradient(135deg, #111827 0%, #1a45b0 100%);
   color: white;
   text-align: center;
+}
+
+.hero h1,
+.page-hero h1 {
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+}
+
+.hero p,
+.page-hero p {
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
 }
 
 button {
@@ -673,10 +694,17 @@ main {
 /* ── Hero Photo Variants ──────────────────────────────────── */
 .hero--photo {
   background-image:
-    linear-gradient(135deg, rgba(17, 24, 39, 0.82) 0%, rgba(26, 69, 176, 0.72) 100%),
+    linear-gradient(135deg, rgba(17, 24, 39, 0.62) 0%, rgba(26, 69, 176, 0.52) 100%),
     url('/assets/images/fallbanner.png');
   background-size: cover;
   background-position: center;
+  padding: 6rem 0;
+}
+
+.hero--photo h1 {
+  font-size: clamp(2.4rem, 5.5vw, 3.9rem);
+  line-height: 1.1;
+  margin: 0 0 0.5rem;
 }
 
 .hero--banner {
@@ -698,8 +726,8 @@ main {
 }
 
 .hero .hero-sub {
-  font-size: 1.15rem;
-  opacity: 0.88;
+  font-size: 1.2rem;
+  opacity: 0.95;
   max-width: 640px;
   margin: 0.75rem auto 2rem;
   line-height: 1.6;
@@ -710,6 +738,38 @@ main {
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes hero-rise {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero--photo .hero-eyebrow,
+  .hero--photo h1,
+  .hero--photo .hero-sub,
+  .hero--photo .hero-actions {
+    animation: hero-rise 0.6s ease-out both;
+  }
+
+  .hero--photo h1 {
+    animation-delay: 0.1s;
+  }
+
+  .hero--photo .hero-sub {
+    animation-delay: 0.2s;
+  }
+
+  .hero--photo .hero-actions {
+    animation-delay: 0.3s;
+  }
 }
 
 .roofing-widget-section {
@@ -1044,6 +1104,111 @@ main {
 
   .reviews-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ── Service FAQ Accordion ────────────────────────────────── */
+.service-faq {
+  padding: 2.5rem 0 1rem;
+}
+
+.service-faq h2 {
+  text-align: center;
+  font-size: 1.7rem;
+  color: #111827;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.service-faq .section-sub {
+  margin-bottom: 2rem;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.faq-item {
+  background-color: #ffffff;
+  border: 1px solid #dbe4f0;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-item[open] {
+  border-color: #f07820;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.09);
+}
+
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.35rem;
+  cursor: pointer;
+  list-style: none;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #111827;
+  border-radius: 12px;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '';
+  flex-shrink: 0;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-right: 2px solid #f07820;
+  border-bottom: 2px solid #f07820;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+  margin-right: 0.25rem;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(-135deg);
+}
+
+.faq-item summary:hover {
+  color: #1a45b0;
+}
+
+.faq-item summary:focus-visible {
+  outline: 2px solid #1a45b0;
+  outline-offset: 2px;
+}
+
+.faq-body {
+  padding: 0 1.35rem 1.25rem;
+  color: #374151;
+  line-height: 1.65;
+}
+
+.faq-body p {
+  margin: 0;
+}
+
+.faq-body a {
+  color: #1a45b0;
+}
+
+@media (max-width: 600px) {
+  .faq-item summary {
+    padding: 0.95rem 1rem;
+    font-size: 1rem;
+  }
+
+  .faq-body {
+    padding: 0 1rem 1rem;
   }
 }
 
