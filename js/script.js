@@ -47,17 +47,16 @@ const initNavInteractions = () => {
 
     toggle.addEventListener('click', (event) => {
       event.preventDefault();
-      const nextState = toggle.getAttribute('aria-expanded') !== 'true';
+      // With a hover-capable pointer the menu is already open from mouseenter,
+      // so a mouse click should keep it open rather than collapse it.
+      // Keyboard-triggered clicks (detail === 0) and touch taps toggle normally.
+      const isMouseClick = event.detail > 0 && window.matchMedia('(hover: hover)').matches;
+      const nextState = isMouseClick || toggle.getAttribute('aria-expanded') !== 'true';
       setDropdownExpanded(toggle, nextState);
     });
 
+    // Enter/Space already trigger a native click on <button>, so only Escape needs handling here
     toggle.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        const nextState = toggle.getAttribute('aria-expanded') !== 'true';
-        setDropdownExpanded(toggle, nextState);
-      }
-
       if (event.key === 'Escape') {
         setDropdownExpanded(toggle, false);
         toggle.blur();
@@ -80,7 +79,13 @@ const initNavInteractions = () => {
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
 
-    document.querySelectorAll('.nav-dropdown-toggle').forEach((toggle) => {
+    document.querySelectorAll('.nav-dropdown').forEach((dropdown) => {
+      const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+      if (!toggle) return;
+      // Return focus to the toggle if it was inside the menu, so it isn't lost on a hidden link.
+      // focus() synchronously fires focusin (which re-opens), so collapse again afterwards.
+      const focusWasInMenu = dropdown.contains(document.activeElement) && document.activeElement !== toggle;
+      if (focusWasInMenu) toggle.focus();
       setDropdownExpanded(toggle, false);
     });
   });
@@ -119,8 +124,8 @@ fetch('/components/footer.html')
   .catch((err) => console.error(err));
 
 const initLightbox = () => {
-  const images = document.querySelectorAll('.gallery-item img');
-  if (!images.length) return;
+  const triggers = document.querySelectorAll('.gallery-item .gallery-button');
+  if (!triggers.length) return;
 
   const lightbox = document.createElement('div');
   lightbox.className = 'lightbox';
@@ -161,14 +166,24 @@ const initLightbox = () => {
     triggerEl = null;
   };
 
-  images.forEach((image) => {
-    image.addEventListener('click', () => openLightbox(image.src, image.alt, image));
+  triggers.forEach((trigger) => {
+    const image = trigger.querySelector('img');
+    if (!image) return;
+    trigger.addEventListener('click', () => openLightbox(image.src, image.alt, trigger));
   });
 
   closeBtn.addEventListener('click', closeLightbox);
 
   lightbox.addEventListener('click', (event) => {
     if (event.target === lightbox) closeLightbox();
+  });
+
+  // The close button is the only focusable element, so keep Tab from escaping the dialog
+  lightbox.addEventListener('keydown', (event) => {
+    if (event.key === 'Tab') {
+      event.preventDefault();
+      closeBtn.focus();
+    }
   });
 
   document.addEventListener('keydown', (event) => {
@@ -190,9 +205,27 @@ const initFaqAccordion = () => {
   });
 };
 
+const initReferralSource = () => {
+  const select = document.getElementById('referral-source');
+  const otherGroup = document.getElementById('referral-other-group');
+  const otherInput = document.getElementById('referral-other');
+  if (!select || !otherGroup || !otherInput) return;
+
+  const syncOtherField = () => {
+    const isOther = select.value === 'Other';
+    otherGroup.hidden = !isOther;
+    otherInput.required = isOther;
+    if (!isOther) otherInput.value = '';
+  };
+
+  select.addEventListener('change', syncOtherField);
+  syncOtherField();
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   initNavInteractions();
   initActiveNavState();
   initLightbox();
   initFaqAccordion();
+  initReferralSource();
 });

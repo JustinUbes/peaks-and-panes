@@ -28,6 +28,28 @@ body {
   margin: 0 auto;
 }
 
+/* ── Skip Link ────────────────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 0.75rem 1.25rem;
+  background-color: #f07820;
+  color: #111827;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0 0 8px 0;
+  transform: translateY(-120%);
+  transition: transform 0.15s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 2px solid #111827;
+  outline-offset: 2px;
+}
+
 /* ── Site Header / Navbar ─────────────────────────────────── */
 .site-header {
   position: sticky;
@@ -197,8 +219,9 @@ body {
   color: #ffffff;
 }
 
-.nav-dropdown:hover .dropdown-menu,
-.nav-dropdown:focus-within .dropdown-menu {
+/* Visibility is driven by aria-expanded (set on hover/focus/click in script.js)
+   so the announced state can never disagree with what's on screen */
+.nav-dropdown-toggle[aria-expanded="true"] + .dropdown-menu {
   display: block;
 }
 
@@ -309,6 +332,42 @@ main {
   padding: 2rem 0;
 }
 
+/* ── Prose pages (e.g. Accessibility Statement) ──────────── */
+.prose-page {
+  max-width: 720px;
+  padding: 1rem 0 2rem;
+}
+
+.prose-page h2 {
+  margin: 2rem 0 0.6rem;
+  font-size: 1.4rem;
+  color: #111827;
+}
+
+.prose-page section:first-child h2 {
+  margin-top: 0;
+}
+
+.prose-page p,
+.prose-page li {
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+.prose-page a {
+  color: #b4500a;
+}
+
+.prose-page .contact-details {
+  margin-top: 1.25rem;
+}
+
+.prose-note {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
 /* ── Site Footer ──────────────────────────────────────────── */
 .site-footer {
   background-color: #111827;
@@ -349,7 +408,7 @@ main {
 .footer-copy {
   margin: 0;
   font-size: 0.85rem;
-  color: #6b7280;
+  color: #9ca3af;
 }
 
 /* ── Page Hero (interior pages) ───────────────────────────── */
@@ -466,6 +525,10 @@ main {
   gap: 0.35rem;
 }
 
+.form-group[hidden] {
+  display: none;
+}
+
 .form-group label {
   font-size: 0.9rem;
   font-weight: 500;
@@ -479,7 +542,7 @@ main {
 .optional {
   font-size: 0.8rem;
   font-weight: 400;
-  color: #9ca3af;
+  color: #6b7280;
 }
 
 .form-group input,
@@ -567,7 +630,7 @@ main {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #f07820;
+  color: #b4500a;
   margin-bottom: 0.6rem;
 }
 
@@ -1045,7 +1108,7 @@ main {
   height: 2rem;
   border-radius: 999px;
   background-color: #fff1e7;
-  color: #d2610f;
+  color: #a8480a;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -1251,6 +1314,21 @@ main {
   box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
 }
 
+.gallery-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: zoom-in;
+}
+
+.gallery-button:focus-visible {
+  outline: 3px solid #f07820;
+  outline-offset: -3px;
+}
+
 .gallery-item img {
   display: block;
   width: 100%;
@@ -1260,7 +1338,8 @@ main {
   transition: transform 0.3s ease;
 }
 
-.gallery-item:hover img {
+.gallery-item:hover img,
+.gallery-button:focus-visible img {
   transform: scale(1.03);
 }
 

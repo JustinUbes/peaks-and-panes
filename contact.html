@@ -33,14 +33,14 @@
   <body>
     <div id="site-header"></div>
 
-    <section class="page-hero">
+    <section class="page-hero" aria-labelledby="page-title">
       <div class="container">
-        <h1>Contact Us</h1>
+        <h1 id="page-title">Contact Us</h1>
         <p>Get a free estimate or ask us anything — we'll get back to you within one business day.</p>
       </div>
     </section>
 
-    <main class="container">
+    <main id="main-content" class="container">
       <section class="contact-section">
         <div class="contact-grid">
 
@@ -119,6 +119,32 @@
                   <option value="Doors">Doors</option>
                   <option value="Multiple / Not Sure">Multiple / Not Sure</option>
                 </select>
+              </div>
+
+              <div class="form-group">
+                <label for="referral-source">How Did You Hear About Us? <span class="optional">(optional)</span></label>
+                <select id="referral-source" name="referral_source">
+                  <option value="" disabled selected>Select an option…</option>
+                  <option value="Google Search">Google Search</option>
+                  <option value="Facebook / Instagram">Facebook / Instagram</option>
+                  <option value="Nextdoor">Nextdoor</option>
+                  <option value="Yard Sign">Yard Sign</option>
+                  <option value="Truck / Vehicle">Truck / Vehicle</option>
+                  <option value="Friend / Neighbor Referral">Friend / Neighbor Referral</option>
+                  <option value="Repeat Customer">Repeat Customer</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group" id="referral-other-group" hidden>
+                <label for="referral-other">Please Specify</label>
+                <input
+                  type="text"
+                  id="referral-other"
+                  name="referral_source_other"
+                  placeholder="Tell us where you found us"
+                  maxlength="120"
+                />
               </div>
 
               <div class="form-group">
